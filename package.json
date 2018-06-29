@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kimobrian <brian.kimokoti@andela.com>",
+  "license": "MIT",
+  "description": "A simple node js server that serves a list of in memory assessment details",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1"
+  }
+}
