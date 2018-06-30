@@ -19,7 +19,7 @@ router.get("/", (req, res)=> {
 */
 require("./assessments")(router);
 
-app.use("v1/", router);
+app.use("/v1/", router);
 if(!module.parent) {
   app.listen(port, ()=> {
     console.log(`Server running on port: ${port}`); // eslint-disable-line no-console
