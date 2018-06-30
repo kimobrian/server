@@ -44,10 +44,12 @@ app.use("/v1/", router);
 /** 
  * Error handling middleware
 */
+/* istanbul ignore next */
 app.use((err, req, res, next)=> {
   res.status(500).send({ error: "An error Occurred" });
   next();
 });
+/* istanbul ignore next */
 if(!module.parent) {
   server.listen(port, onListening);  
 }

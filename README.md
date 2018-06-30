@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/kimobrian/server.svg?branch=master)](https://travis-ci.com/kimobrian/server)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b3ca7fe1af2956ffd72f/maintainability)](https://codeclimate.com/github/kimobrian/server/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b3ca7fe1af2956ffd72f/test_coverage)](https://codeclimate.com/github/kimobrian/server/test_coverage)
+
 # Server
 
 Simple Express Server to Serve a List of records

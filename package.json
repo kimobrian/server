@@ -8,7 +8,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "lint": "eslint . --fix",
-    "test": "nyc --reporter=text --reporter=html mocha --recursive -w"
+    "test": "nyc --reporter=text --reporter=html --reporter=lcov mocha --recursive"
   },
   "dependencies": {
     "dotenv": "^6.0.0",

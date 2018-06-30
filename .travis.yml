@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "node"
+  - 9.10.0
+cache:
+  directories:
+    - "node_modules"
+
+before_install:
+  - npm config set spin false
+
+before_script:
+  # CodeClimate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - npm test
+
+after_script:
+  # CodeClimate report coverage
+  - ./cc-test-reporter after-build upload-coverage -t lcov
