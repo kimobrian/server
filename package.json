@@ -6,7 +6,7 @@
   "license": "MIT",
   "description": "A simple node js server that serves a list of in memory assessment details",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "lint": "eslint . --fix",
     "test": "nyc --reporter=text --reporter=html --reporter=lcov mocha --recursive"
   },
