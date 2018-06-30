@@ -11,7 +11,7 @@ module.exports = (router) => {
    * get all assessments
   */
   router.get("/assessments", (req, res)=> {
-    res.json(assessmentList);
+    res.json({ assessments: assessmentList });
   }),
   /**
    * get a single assessment using the assessment id
@@ -19,7 +19,7 @@ module.exports = (router) => {
   router.get("/assessments/:id", (req, res)=> {
     let assessmentId = req.params.id;
     let fellowDetails = assessmentList.filter(item=> item.id === assessmentId);
-    return res.json(fellowDetails[0] || []);
+    return res.json({ assessment: fellowDetails[0] || []});
   });
 };
 

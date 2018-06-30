@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
 const express = require("express");
 const http = require("http");
+const cors = require("cors");
 require("dotenv").config();
+const morgan = require("morgan");
 
 /**
  * Normalize a port into a number, string, or false.
@@ -23,7 +25,12 @@ function normalizePort (val) {
 let port = normalizePort(process.env.PORT || 4245);
 
 let app = express();
+app.use(cors({
+  origin: "*",
+  optionsSuccessStatus: 200
+}));
 const server = http.createServer(app);
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 let router=express.Router();
