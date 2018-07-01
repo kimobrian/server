@@ -7,7 +7,7 @@ let assessmentList = [
 ];
 
 module.exports = (router) => {
-  /** 
+  /**
    * get all assessments
   */
   router.get("/assessments", (req, res)=> {
@@ -19,7 +19,14 @@ module.exports = (router) => {
   router.get("/assessments/:id", (req, res)=> {
     let assessmentId = req.params.id;
     let fellowDetails = assessmentList.filter(item=> item.id === assessmentId);
-    return res.json({ assessment: fellowDetails[0] || []});
+    return fellowDetails[0] ?
+      res.json({ assessment: fellowDetails[0]}) :
+      res.status(404).json({ error: true, message: "Record Not Found"});
+  });
+
+  router.post("/assessments", (req, res)=> {
+    let { fellow, assessor, score, status } = req.body;
+    if(!fellow || !assessor || !score || !status ) return res.status(400).json({ error: true, message: "Please provide all fields"});
   });
 };
 
