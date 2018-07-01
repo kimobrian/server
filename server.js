@@ -53,8 +53,8 @@ app.use("/v1/", router);
 */
 /* istanbul ignore next */
 app.use((err, req, res, next)=> {
-  res.status(500).send({ error: "An error Occurred" });
-  next();
+  console.log({err}); // eslint-disable-line no-console
+  return res.status(500).json({ error: true, message: "An error occurred"});
 });
 /* istanbul ignore next */
 if(!module.parent) {
