@@ -10,13 +10,14 @@ module.exports = {
         defaultValue: () => uuid()
       },
       fellow: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true
       },
       assessor: {
         type: Sequelize.STRING
       },
       score: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       status: {
         type: Sequelize.STRING

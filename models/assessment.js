@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: () => uuid()
     },
-    fellow: DataTypes.STRING,
+    fellow: { type: DataTypes.STRING, unique: true },
     assessor: DataTypes.STRING,
-    score: DataTypes.NUMBER,
+    score: DataTypes.INTEGER,
     status: DataTypes.STRING
   }, {});
   Assessment.associate = function(/*models*/) {
