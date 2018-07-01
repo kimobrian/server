@@ -26,7 +26,7 @@ module.exports = (router) => {
    * Create an assessment record
   */
   router.post("/assessments", (req, res, next)=> {
-    let { fellow, assessor, score, status } = req.body;
+    let { fellow, assessor, score, status } = req.body.assessment;
     if(!fellow || !assessor || !score || !status ) return res.status(400).json({ error: true, message: "Please provide all fields"});
     return Assessment
       .create({
@@ -35,7 +35,7 @@ module.exports = (router) => {
         score,
         status
       })
-      .then(assessment => res.status(201).json(assessment))
+      .then(assessment => res.status(201).json({assessment}))
       .catch((error) => {
         next(error);
       });
